@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+// import ChartBlock from "./components/chartBlock/chartBlock";
+import { Routes, Route, BrowserRouter, Link} from "react-router-dom";
+import Servers from "./pages/Routers";
+import ChartBlock from "./components/chartBlock/chartBlock";
+import './App.css'
 
 function App() {
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter>
+          <div className="navbar">
+            <div className="navbar-navigate">
+            <Link className="navbar__links" to="/servers">Server</Link>
+            <Link className="navbar__links" to="/routers">Routers</Link>
+            <Link className="navbar__links" to="/works">Works</Link>
+            </div>
+          </div>
+      <Routes>
+        <Route path="/servers" element={<Servers/>}></Route>
+        <Route path="/ttg" element={<ChartBlock/>}></Route>
+        <Route path="/works" element={<ChartBlock/>}></Route>
+      </Routes>
+    </BrowserRouter>
+    );
 }
 
 export default App;

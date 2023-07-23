@@ -1,0 +1,21 @@
+.chart {
+    width: 760px;
+    height: 220px;
+    margin: 25px
+};
+
+.axis {
+    color: #ccd6eb;
+    & text {
+      color: #666;
+    }
+    & .domain {
+      display: none;
+    }
+  }
+  
+  .xAxis {
+    & line {
+      display: none;
+    }
+  }
